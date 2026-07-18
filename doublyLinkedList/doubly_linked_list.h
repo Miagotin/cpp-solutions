@@ -21,7 +21,7 @@ struct LinkedList {
     LinkedList() : head(nullptr), tail(nullptr), size(0) {}
     
     LinkedList(std::initializer_list<T> init) : head(nullptr), tail(nullptr), size(0) {
-        for(auto value : init) {
+        for(const auto& value : init) {
             this->push_back(value);
         }
     }
@@ -30,7 +30,7 @@ struct LinkedList {
         Node<T>* current = other.head;
         while(current != nullptr) {
             this->push_back(current->value);
-            current = current-> next;
+            current = current->next;
         }
     }
     
@@ -40,7 +40,7 @@ struct LinkedList {
     
     void push_back(const T& value) {
 
-        if(size == 0) {
+        if(empty()) {
             Node<T>* newNode = new Node<T>{value, nullptr, nullptr};
             
             head = tail = newNode;
@@ -56,7 +56,7 @@ struct LinkedList {
     
     void push_front(const T& value) {
         
-        if(size == 0) {
+        if(empty()) {
             Node<T>* newNode = new Node<T>{value, nullptr, nullptr};
             
             head = tail = newNode;
@@ -72,7 +72,7 @@ struct LinkedList {
     
     void pop_back() {
         
-        if(size == 0) {
+        if(empty()) {
             return;
         }
         
@@ -92,7 +92,7 @@ struct LinkedList {
     
     void pop_front() {
         
-        if(size == 0) {
+        if(empty()) {
             return;
         }
         
