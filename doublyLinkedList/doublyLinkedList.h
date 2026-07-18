@@ -39,7 +39,7 @@ struct LinkedList {
         while(current != nullptr) {
             Node<T>* next = current-> next;
             delete current;
-            currnet = next;
+            current = next;
         }
     }
     
