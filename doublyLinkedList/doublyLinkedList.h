@@ -35,12 +35,7 @@ struct LinkedList {
     }
     
     ~LinkedList() {
-        Node<T>* current = head;
-        while(current != nullptr) {
-            Node<T>* next = current-> next;
-            delete current;
-            current = next;
-        }
+        clear();
     }
     
     void push_back(T value) {
