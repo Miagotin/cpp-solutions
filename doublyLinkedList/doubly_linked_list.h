@@ -38,7 +38,7 @@ struct LinkedList {
         clear();
     }
     
-    void push_back(T value) {
+    void push_back(const T& value) {
 
         if(size == 0) {
             Node<T>* newNode = new Node<T>{value, nullptr, nullptr};
@@ -54,7 +54,7 @@ struct LinkedList {
         size++;
     }
     
-    void push_front(T value) {
+    void push_front(const T& value) {
         
         if(size == 0) {
             Node<T>* newNode = new Node<T>{value, nullptr, nullptr};
