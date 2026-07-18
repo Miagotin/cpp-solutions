@@ -2,8 +2,6 @@
 #define DOUBLY_LINKED_LIST_H
 
 #include <bits/stdc++.h>
-using namespace std;
-
 
 template <typename T>
 struct Node {
@@ -16,11 +14,11 @@ template <typename T>
 struct LinkedList {
     Node<T>* head;
     Node<T>* tail;
-    size_t size;
+    std::size_t size;
     
     LinkedList() : head(nullptr), tail(nullptr), size(0) {}
     
-    LinkedList(initializer_list<T> init) : head(nullptr), tail(nullptr), size(0) {
+    LinkedList(std::initializer_list<T> init) : head(nullptr), tail(nullptr), size(0) {
         for(auto value : init) {
             this->push_back(value);
         }
@@ -132,13 +130,13 @@ struct LinkedList {
     void print() const {
         Node<T>* current = head;
         while(current != nullptr) {
-            cout << current->value;
+            std::cout << current->value;
             if(current->next != nullptr) {
-                cout << ' ';
+                std::cout << ' ';
             }
             current = current->next;
         }
-        cout << endl;
+        std::cout << std::endl;
     }
     
 };
