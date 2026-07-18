@@ -1,7 +1,9 @@
 #ifndef DOUBLY_LINKED_LIST_H
 #define DOUBLY_LINKED_LIST_H
 
-#include <bits/stdc++.h>
+#include <initializer_list>
+#include <iostream>
+#include <cstddef>
 
 template <typename T>
 struct Node {
