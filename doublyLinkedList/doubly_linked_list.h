@@ -33,6 +33,23 @@ struct LinkedList {
             current = current->next;
         }
     }
+
+    LinkedList& operator=(const LinkedList& other) {
+        if(this == &other) {
+            return *this;
+        }
+
+        clear();
+
+        Node<T>* current = other.head;
+
+        while(current != nullptr) {
+            push_back(current->value);
+            current = current->next;
+        }
+
+        return *this;
+    }
     
     ~LinkedList() {
         clear();
@@ -121,7 +138,7 @@ struct LinkedList {
         size = 0;
     }
     
-    size_t getSize() const {
+    std::size_t getSize() const {
         return size;
     }
     
